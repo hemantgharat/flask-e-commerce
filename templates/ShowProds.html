@@ -1,0 +1,23 @@
+{% extends "master.html" %}
+{% block title %}Product Details {% endblock %}
+
+{% block content %}
+    {% for p in pds %}
+    <div class="row">
+        <div class="col-sm-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">{{p[1]}}</div>
+            <div class="panel-body"><img src="../static/images/{{p[4]}}" class="img-responsive" width="100%" alt="Image"></div>
+            <div class="panel-footer">
+                <form action="/editProd">
+                    <input type="hidden" value="{{p[0]}}" name="cid"/>
+                <input type="submit" class="/login" value="View Details"/>
+                </form>
+            </div>
+          </div>
+        </div>
+        </div>
+
+    {% endfor %}
+
+{% endblock %}

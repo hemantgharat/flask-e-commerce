@@ -1,0 +1,22 @@
+{% extends "master.html" %}
+{% block title %}Feedback{% endblock %}
+{% block content %}
+<style>
+</style>
+    <h1 class="alert alert-info" style="text-align: center;">Feedback</h1>
+        <form action="/Feedback" method="post" enctype="multipart/form-data">
+            <table class="table">
+                <tr>
+                    <th>Name :</th>
+                    <th><input type="text" name="n"/></p></th>
+                </tr>
+                <tr>
+                    <th>Summary :</th>
+                    <th><input type="text" name="d"/></p></th>
+                </tr>
+                <tr>
+                    <th><br><p style="text-align: center;"><input type="submit" value="Submit"/></p></th><br>
+                </tr>  
+            </table>
+        </form>
+{% endblock %}

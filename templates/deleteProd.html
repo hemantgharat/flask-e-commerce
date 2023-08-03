@@ -1,0 +1,11 @@
+{% extends "admin.html" %}
+{% block title %}Delete Product{% endblock %}
+{% block content %}
+       <form action="/delProd" method="POST">
+            <p>Id:{{d[0]}}
+                <input type="hidden" value="{{d[0]}}" name="pid"/>
+            </p>
+            <p>Name:<input type="text" value="{{d[1]}}" name="pn"/></p>
+            <p><input type="submit" value="Edit"/></p>
+        </form>
+{% endblock %}

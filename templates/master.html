@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+<title>{% block title %}{% endblock %}</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+  /* Remove the navbar's default margin-bottom and rounded borders */
+  .navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+
+  /* Add a gray background color and some padding to the footer */
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+  }
+</style>
+{% endblock %}
+</head>
+
+<body>
+  <div style="background-color:rgb(82, 186, 204); color:white">
+    <div style="font-family:'Brush Script MT, Brush Script Std', cursive">
+      <h1 style="text-align: center; color: black;">Infinite<span> Store</span></h1>
+      <h4 style="text-align: center;">Whatever you’ve got in mind, we’ve got inside</h4><br>
+    </div>
+  </div>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar"
+        style="background-color: black ; color:rgb(231, 234, 235) ; font-size: 14px ;font-size: large">
+        <ul class="nav nav-tabs">
+          <li><a href="/" style="color: rgb(252, 9, 179)">Home</a></li>
+          <li><a href="/allProd" style="color: rgb(252, 9, 179)">Our Products</a></li>
+          <li><a href="/Feedback" style="color: rgb(252, 9, 179)">Feedback</a></li>
+          <li><a href="/contact" style="color: rgb(252, 9, 179)">Contact</a></li>
+
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <div>
+                <form action="/search">
+                  <input type="text" name="search" id="search" placeholder="What are you looking for?"
+                    class="MuiAutocomplete-input MuiAutocomplete-inputFocused search-field" aria-autocomplete="list"
+                    autocomplete="off" autocapitalize="none" spellcheck="false" value="" size="50">
+                  <input type="submit" value="Search" class="btn btn-success" />&nbsp&nbsp
+                </form>
+              </div>
+            </li>
+            {% if(un!="") %}
+            <li style="color: white;">Welcome{{un}}</li>
+            {% else %}
+            <li>
+              <h4><a href="/login" style="color: white"><span class="glyphicon glyphicon-log-in"
+                    style="color: white"></span>
+                  Login&nbsp&nbsp</a></h4>
+            </li>
+            {% endif %}
+            <li>
+              <h4><a href="/login" style="color: white"> &nbsp<span class="glyphicon glyphicon-shopping-cart"></span>
+                  Cart &nbsp</a></h4>
+            </li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  {% block content %}{% endblock %}
+  <footer class="container-fluid text-center">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <h5 style="color: aliceblue;">Follow Us</h5>
+    <h4>
+      <a href="https://www.youtube.com/channel/UCp1SYlMaBRm8tPvxx2bHk9Q" class="fa fa-youtube"></a>
+      <a href="https://twitter.com/HemantGharat007" class="fa fa-twitter"></a>
+      <a href="https://www.facebook.com/hemant.gharat.967" class="fa fa-facebook"></a>
+      <a href="https://www.instagram.com/invites/contact/?i=1nkzv8wb4vayo&utm_content=11y9gru"
+        class="fa fa-instagram"></a>
+    </h4>
+  </footer>
+</body>
+
+</html>

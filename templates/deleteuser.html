@@ -1,0 +1,11 @@
+{% extends "admin.html" %}
+{% block title %}Delete User{% endblock %}
+{% block content %}
+       <form action="/deluser" method="POST">
+            <p>Id:{{u[0]}}
+                <input type="hidden" value="{{u[0]}}" name="uid"/>
+            </p>
+            <p>Name:<input type="text" value="{{u[1]}}" name="un"/></p>
+            <p><input type="submit" value="Edit"/></p>
+        </form>
+{% endblock %}

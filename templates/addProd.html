@@ -1,0 +1,38 @@
+{% extends "admin.html" %}
+{% block title %}Product{% endblock %}
+{% block content %}
+<h1 class="alert alert-info" style="text-align: center;">Add Product</h1>
+    <form action="/addProd" method="post" enctype="multipart/form-data">
+    <table class="table">
+        <tr>
+            <th>Name : </th>
+            <th><input type="text" name="n"/></p></th>
+        </tr>
+        <tr>
+            <th>Description : </th>
+            <th><input type="text" name="d"/></p></th>
+        </tr>
+            <th>Price : </th>
+            <th><input type="text" name="pr"/></th>
+        <tr>
+            <th>Upload Image : </th>
+            <td><input type="file" name="im"/></p></td>
+        </tr>    
+        <tr>
+            <th>Category : </th>
+            <th><select name="cid">
+                {% for c in cats %}
+                    <option value="{{c[0]}}">{{c[1]}}</option>
+                {% endfor %}
+            </select></p></th>
+        </tr>
+        <tr>
+            <th>Quantity : </th>
+            <td><input type="number" name="q"/></td>
+        </tr>
+        <tr>
+            <th><br><p style="text-align: center;"><input type="submit" value="Add Product"/></p></th><br>
+        </tr>  
+    </table>
+    </form>
+{% endblock %}

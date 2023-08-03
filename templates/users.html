@@ -1,0 +1,44 @@
+{% extends "admin.html" %}
+{% block title %}Products{% endblock %}
+{% block content %}
+<style>
+    th{
+      padding: 2px;
+      background: #ff523b;
+      text-align: left;
+      font-weight: bold;
+      color: aliceblue;
+    }
+</style>
+<h1 class="alert alert-info" style="text-align: center;">User Details</h1>
+<table class="table" style="font-style: inherit;">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Password</th>
+        <th>Email_ID</th>
+        <th>Mobile No</th>
+        <th>Country</th>
+        <th>Pin Code</th>
+        <th>Action</th>
+    </tr>
+    {% for u in user%}
+        <tr>
+            <td>{{u[0]}}</td>
+            <td>{{u[1]}}</td>
+            <td>{{u[2]}}</td>
+            <td>{{u[3]}}</td>
+            <td>{{u[4]}}</td>
+            <td>{{u[5]}}</td>
+            <td>{{u[6]}}</td>
+
+            <td> <form action="/deleteuser" method="post">
+                <input type="hidden" value="{{u[0]}}" name="uid"/>
+            <input type="submit" class="btn btn-link" value="Delete"/>
+            </form></td>
+        </tr>
+    {% endfor%}
+
+
+</table>
+{% endblock %}

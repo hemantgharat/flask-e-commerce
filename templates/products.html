@@ -1,0 +1,42 @@
+{% extends "admin.html" %}
+{% block title %}Products{% endblock %}
+{% block content %}
+<style>
+    th{
+      padding: 2px;
+      background: #ff523b;
+      text-align: left;
+      font-weight: bold;
+      color: aliceblue;
+    }
+</style>
+<h1 class="alert alert-info" style="text-align: center;">Product Details</h1>
+<table class="table" style="font-style: inherit;">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th>Quantity</th>
+        <th>Action</th>
+    </tr>
+    {% for p in prods%}
+        <tr>
+            <td>{{p[0]}}</td>
+            <td>{{p[1]}}</td>
+            <td>{{p[2]}}</td>
+            <td>{{p[3]}}</td>
+            <td><img src="../static/images/{{p[4]}}" height="100px" width="100px"/></td>
+            <td>{{p[5]}}</td>
+
+            <td> <form action="/deleteProd" method="post">
+                <input type="hidden" value="{{p[0]}}" name="pid"/>
+            <input type="submit" class="btn btn-link" value="Delete"/>
+            </form></td>
+        </tr>
+    {% endfor%}
+
+
+</table>
+{% endblock %}

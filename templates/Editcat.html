@@ -1,0 +1,11 @@
+{% extends "admin.html" %}
+{% block title %}Edit category{% endblock %}
+{% block content %}
+       <form action="/editcategory" method="POST">
+            <p>Id:{{c[0]}}
+                <input type="hidden" value="{{c[0]}}" name="id"/>
+            </p>
+            <p>Name:<input type="text" value="{{c[1]}}" name="cn"/></p>
+            <p><input type="submit" value="Edit"/></p>
+        </form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "admin.html" %}
+{% block title %}Add Category{% endblock %}
+{% block content %}
+        <h1 class="alert alert-info" style="text-align: center;">Add Category</h1>
+        <form action="/AddCat" method="post" enctype="multipart/form-data">
+        <table class="table">
+            <tr>
+                <th>Enter Category :</th>
+                <th><input type="text" name="cn"/></p></th>
+            </tr>
+            <tr>
+                <th><br><p style="text-align: center;"><input type="submit" value="Add Category"/></p></th><br>
+            </tr>  
+        </table>
+        </form>
+{% endblock %}
+

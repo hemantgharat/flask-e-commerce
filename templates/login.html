@@ -1,0 +1,22 @@
+{% extends "master.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+
+        <form action="/signin" method="post">
+        <table class="table">
+            <tr>
+                <th>UserName:</th>
+                <td><input type="text" name="n"/></td>
+            </tr>
+            <tr>
+                <th>Password:</th>
+                <td><input type="password" name="p"/></td>
+            </tr>
+       
+            <tr>
+                <th><input type="submit" value="Login" class="btn btn-success" /> </th>
+                <td><a href="/Signup">Not yet register?Register here...</a></td>
+            </tr>
+        </table>
+        </form>
+{% endblock %}

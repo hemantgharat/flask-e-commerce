@@ -1,0 +1,28 @@
+{% extends "admin.html" %}
+{% block title %}Feedbacks{% endblock %}
+{% block content %}
+<style>
+    th{
+      padding: 2px;
+      background: #ff523b;
+      text-align: left;
+      font-weight: bold;
+      color: aliceblue;
+    }
+</style>
+            <h1 class="alert alert-info" style="text-align: center;">Feedbacks</h1>
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Summary</th>
+                    <th>Time Stamp</th>
+                    
+                </tr>
+                {% for f in feed%}
+                    <tr>
+                        <td>{{f[0]}}</td>
+                        <td>{{f[1]}}</td>
+                        <td>{{f[2]}}</td>
+                {% endfor%}
+            </table>
+{% endblock %}

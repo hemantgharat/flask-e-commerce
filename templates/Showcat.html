@@ -1,0 +1,42 @@
+{% extends "admin.html" %}
+{% block title %}Categories{% endblock %}
+{% block content %}
+<style>
+    th{
+      padding: 2px;
+      background: #ff523b;
+      text-align: left;
+      font-weight: bold;
+      color: aliceblue;
+    }
+</style>
+<h1 class="alert alert-info" style="text-align: center;">Category Details</h1>
+<table class="table" style="font-style: inherit;">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    {% for c in cats%}
+        <tr>
+            <td><p name="id">{{c[0]}}</p></td>
+            <td>{{c[1]}}</td>
+
+            <td> 
+                <form action="/Editcat" method="post">
+                    <input type="hidden" value="{{c[0]}}" name="cid"/>
+                    <input type="submit" class="btn btn-link" value="Edit"/>
+                </form>
+            </td>
+
+            <td> 
+                <form action="/delcat" method="post">
+                    <input type="hidden" value="{{c[0]}}" name="cid"/>
+                    <input type="submit" class="btn btn-link" value="Delete"/>
+                </form>
+            </td>
+        </tr>
+    {% endfor%}
+</table>
+{% endblock %}
